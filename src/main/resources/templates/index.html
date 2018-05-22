@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+<body>
+我的信息为：<a id="info"></a>
+</body>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url:"/user/id",
+            type:"GET",
+            dataType:"json",
+            data:{"id":"1"},
+            success:function (data) {
+                alert(data);
+                $("#info").html(data);
+            }
+        })
+    })
+</script>
+</html>
